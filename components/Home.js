@@ -4,6 +4,8 @@ import Header from "./Header";
 import ArticleList from "./articles/ArticleList";
 import RandomArticles from "./articles/RandomArticles";
 
+import Article from "./articles/Article";
+
 class Home extends Component {
 
     constructor() {
@@ -27,10 +29,11 @@ class Home extends Component {
 
     render() {
         let articles = this.state.articles;
+        
         return ( 
             <div id="wrapper">
                 <Header />
-                <ArticleList articles = { articles } />
+                <ArticleList articles = { articles } Article={ Article }/>
                 <RandomArticles articles = { articles } />
             </div>
         );
