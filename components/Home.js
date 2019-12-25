@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component }from 'react';
 
 import Header from "./Header";
 import ArticleList from "./articles/ArticleList";
@@ -6,9 +6,9 @@ import RandomArticles from "./articles/RandomArticles";
 
 class Home extends Component {
 
-    constructor() {
-        super();
-
+    constructor(props) {
+        super(props);
+        
         this.state = {
             articles: "Nothing here" 
         }
@@ -16,18 +16,18 @@ class Home extends Component {
 
     componentDidMount() {
         let xhr = new XMLHttpRequest();
-        xhr.open("GET", "/data/articles");
+        xhr.open("GET", "/data/articles", false);
         xhr.send();
 
-        xhr.onload = () => {
-            let result = JSON.parse(xhr.response);
-            this.setState({ articles: result })
-        }
+        let result = JSON.parse(xhr.response);
+
+        this.setState({ articles: result })
+
     }
 
     render() {
         let articles = this.state.articles;
-        console.log(articles);
+        
         return ( 
             <div id="wrapper">
                 <Header />
