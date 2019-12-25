@@ -33,8 +33,10 @@ class Home extends Component {
         return ( 
             <div id="wrapper">
                 <Header />
-                <ArticleList articles = { articles } Article={ Article }/>
-                <RandomArticles articles = { articles } />
+                <div id="content">
+                    <ArticleList articles = { articles } Article=   { Article }/>
+                    <RandomArticles articles = { articles } />
+                </div>
             </div>
         );
     }
