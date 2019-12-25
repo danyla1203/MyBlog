@@ -6,8 +6,8 @@ import RandomArticles from "./articles/RandomArticles";
 
 class Home extends Component {
 
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
         
         this.state = {
             articles: "Nothing here" 
@@ -16,18 +16,17 @@ class Home extends Component {
 
     componentDidMount() {
         let xhr = new XMLHttpRequest();
-        xhr.open("GET", "/data/articles", false);
+        xhr.open("GET", "/data/articles");
         xhr.send();
 
-        let result = JSON.parse(xhr.response);
-
-        this.setState({ articles: result })
-
+        xhr.onload = () => {
+            let result = JSON.parse(xhr.response);
+            this.setState({ articles: result })
+        }
     }
 
     render() {
         let articles = this.state.articles;
-        
         return ( 
             <div id="wrapper">
                 <Header />
