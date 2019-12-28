@@ -30,14 +30,20 @@ function RandomArticles(props) {
   
     let renderedArticles = articles.map(element => {
         return (
-            <div>
-            <h4>{element.title}</h4>
-            <Link to={ "/post" + element.id }>Link</Link>
+            <div key={ element.id }>
+                <h4>{element.title}</h4>
+                <p>{ element.short_text }</p>   
+                <Link to={ "/post/" + element.id }>Link</Link>
             </div>
         );
     });
   
-    return <div>{renderedArticles}</div>;
+    return (
+        <div id="random_articles">
+            <h3>Random Articles</h3>
+            {renderedArticles}
+        </div>
+    )
   }
 
 
