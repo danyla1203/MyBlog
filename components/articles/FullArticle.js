@@ -17,10 +17,12 @@ function FullArticle(props) {
     
     let article = getArticle();
 
+    let img = ( article.img ) ? <img src={ article.img }/> : "";
     return (
         <div>
-             <Header />
+            <Header />
             <div id="article">
+                { img }
                 <h3>{ article.title }</h3>
                 <p>{ article.text }</p>
                 <h4>{ article.date }</h4>

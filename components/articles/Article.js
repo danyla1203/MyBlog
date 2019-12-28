@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 function Article(props) {
 
+
     let img = ( props.data.img ) ?  <img src={ props.data.img } /> : "";
     return (
         <div className="article">
