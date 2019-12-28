@@ -5,12 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>My Blog</title>
+
     <link rel="stylesheet" href="/assets/css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:700|Merriweather&display=swap" rel="stylesheet"> 
 </head>
 <body>
     <div id="root">
         
     </div>
-    <script src="/assets/dist/bundle.js"></script>
+    
+    <style type="text/css">#hellopreloader>p{display:none;}#hellopreloader_preload{display: block;position: fixed;z-index: 99999;top: 0;left: 0;width: 100%;height: 100%;min-width: 1000px;background: rgb(46, 54, 78) url(http://hello-site.ru//main/images/preloads/three-dots.svg) center center no-repeat;background-size:41px;}</style>
+    <div id="hellopreloader"><div id="hellopreloader_preload"></div>
+    <script type="text/javascript">var hellopreloader = document.getElementById("hellopreloader_preload");function fadeOutnojquery(el){el.style.opacity = 1;var interhellopreloader = setInterval(function(){el.style.opacity = el.style.opacity - 0.05;if (el.style.opacity <=0.05){ clearInterval(interhellopreloader);hellopreloader.style.display = "none";}},16);}window.onload = function(){setTimeout(function(){fadeOutnojquery(hellopreloader);},1000);};</script>
+
+    <script src="/assets/dist/bundle.js" defer></script>
+    
 </body>
 </html>
