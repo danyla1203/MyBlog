@@ -8,6 +8,9 @@ import AboutSite from "./AboutSite";
 import Catalog from "./Catalog";
 import FullArticle from './articles/FullArticle';
 
+import Login from "./Login";
+import Admin from "./admin/Admin";
+
 function App() {
     return (
         <Router>
@@ -21,7 +24,9 @@ function App() {
                 <Route exact path="/catalog" component={ Catalog } />
             
                 <Route exact path="/post/:idPost" component={ FullArticle } />
-                    
+
+                <Route path="/admin" component={ Admin } />
+
                 <Route>
                     <h1>Error 404. Not found</h1>
                 </Route>
